@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 //set username and password protectively
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
-const uri = process.env.DB_DATABASE;
+const uri = process.env.DB_PATH;
 
 //Create a connection with MongoClient
 let client = new MongoClient(uri, {
