@@ -134,7 +134,7 @@ app.post("/submit-order", (req, res) => {
   });
 });
 
-//get all orders
+//get orders by user
 app.get("/orders", (req, res) => {
   client = new MongoClient(uri, {
     useNewUrlParser: true,
@@ -143,6 +143,26 @@ app.get("/orders", (req, res) => {
   client.connect((err) => {
     const collection = client.db("fresh-valley-shop").collection("orders");
     collection.find({ email: req.query.email }).toArray((err, document) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send({ message: err });
+      } else {
+        res.send(document);
+        console.log("order is get successfully from database");
+      }
+    });
+  });
+});
+
+//get orders by user
+app.get("/all-orders", (req, res) => {
+  client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  client.connect((err) => {
+    const collection = client.db("fresh-valley-shop").collection("orders");
+    collection.find({}).toArray((err, document) => {
       if (err) {
         console.log(err);
         res.status(500).send({ message: err });
