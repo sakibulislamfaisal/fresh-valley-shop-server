@@ -1,0 +1,34 @@
+{
+  "name": "fresh-valley-shop-server",
+  "version": "1.0.0",
+  "description": "This is an ecommerce online shopping portal where people can buy their desired products",
+  "main": "index.js",
+  "scripts": {
+   "start" : "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakibulislamfaisal/fresh-valley-shop-server.git"
+  },
+  "keywords": [
+    "React",
+    "Node",
+    "MongoDB",
+    "Express",
+    "Firebase"
+  ],
+  "author": "Foyshal Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakibulislamfaisal/fresh-valley-shop-server/issues"
+  },
+  "homepage": "https://github.com/sakibulislamfaisal/fresh-valley-shop-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
+    "nodemon": "^2.0.7"
+  }
+}
