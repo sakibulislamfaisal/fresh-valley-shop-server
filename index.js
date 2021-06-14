@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 //set username and password protectively
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
-const uri = process.env.DB_DATABASE;
+const uri = process.env.DB_PATH;
 
 //Create a connection with MongoClient
 let client = new MongoClient(uri, {
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
     "<h1 style='color:green;text-align:center;margin-top:20px'>Welcome To The Fresh Valley Shop backend Side</h1>"
   );
 });
-
+//DB_DATABASE = mongodb://localhost:27017/fresh-valley-shop
 //Add new Products into the database
 app.post("/add-products", (req, res) => {
   const products = req.body;
